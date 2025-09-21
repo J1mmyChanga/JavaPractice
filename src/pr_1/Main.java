@@ -1,6 +1,8 @@
+package pr_1;
+
 public class Main {
     public static void main(String[] args) {
-        Car car = new Car("Deo Matiz", "2281337", "purple", 2012);
+        Car car = new Car();
         car.getInfo();
         System.out.println(car.getAutoYear());
         car.setColor("black and yellow");
@@ -8,8 +10,7 @@ public class Main {
         car.getInfo();
         System.out.println(car.getAutoYear());
 
-        long num = 2389;
-        double numb = 12313;
-        System.out.println(num * numb);
+        Converter conv = new Converter();
+        conv.func();
     }
 }

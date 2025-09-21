@@ -1,0 +1,6 @@
+package pr_1;
+public class File {
+    public static void main(String args[]) {
+        System.out.println("Hello world!");
+    }
+}

@@ -1,4 +1,4 @@
-import java.util.Scanner;
+package pr_1;
 
 public class Car {
     private String model;
