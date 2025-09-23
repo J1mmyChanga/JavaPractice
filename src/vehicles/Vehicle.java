@@ -9,16 +9,14 @@ public abstract class Vehicle {
     protected String insuranceNumber;
     protected String engineType;
 
-    public Vehicle() {
-        this.model = "Dodge Challenger";
-        this.license = "M973УН67";
-        this.color = "black";
-        this.year = "2004";
-        this.ownerName = "Vitalya";
-        this.insuranceNumber = "275625";
-        this.engineType = "Turbo";
-    }
     public abstract String vehicleType();
+
+    @Override
+    public String toString() {
+        return String.format(vehicleType() + ": model = %s; license = %s; color = %s; year = %s; ownerName = %s; " +
+                "insuranceNumber = %s; engine = %s", model, license, color, year, ownerName, insuranceNumber, engineType);
+
+    }
 
     public void setModel(String model) { this.model = model; }
     public void setLicense(String license) { this.license = license; }
