@@ -1,9 +1,6 @@
-package pr_4;
+package pr_4_1;
 
-import java.util.Date;
-
-public abstract class GeometricObject implements Comparable {
-    protected Date dateCreated;
+public abstract class GeometricObject implements Comparable, Colorable {
     protected String color;
     protected boolean filled;
 
@@ -16,6 +13,9 @@ public abstract class GeometricObject implements Comparable {
         this.color = color;
         this.filled = filled;
     }
+
+    public abstract double getArea();
+    public abstract double getPerimeter();
 
     public static GeometricObject max(GeometricObject ob1, GeometricObject ob2) {
         if (ob1.getArea() >= ob2.getArea()) {

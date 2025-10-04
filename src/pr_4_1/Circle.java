@@ -1,9 +1,9 @@
-package pr_4;
+package pr_4_1;
 
 import static java.lang.Math.PI;
 import static java.lang.Math.pow;
 
-public class Circle extends GeometricObject{
+public class Circle extends GeometricObject {
     private double radius;
 
     public Circle() {
@@ -23,10 +23,24 @@ public class Circle extends GeometricObject{
     public double getPerimeter() { return 2 * PI * this.radius; }
 
     @Override
+    public GeometricObject compareTo(GeometricObject ob) {
+        return max(this, ob);
+    };
+
+    @Override
     public String toString() {
         return String.format("Круг: radius = %.2f; " +
                         "цвет = %s; закрашен = %b; площадь = %.2f; периметр = %.2f", radius, color, filled,
                 getArea(), getPerimeter());
+    }
+
+    @Override
+    public void howToColor() {
+        if (filled) {
+            System.out.println("Раскрасьте весь круг");
+        } else {
+            System.out.println("Нельзя раскрасить(");
+        }
     }
 
     public void setRadius(double radius) { this.radius = radius; }

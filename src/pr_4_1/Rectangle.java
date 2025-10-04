@@ -1,8 +1,6 @@
-package pr_4;
+package pr_4_1;
 
-import static java.lang.Math.sqrt;
-
-public class Rectangle extends GeometricObject{
+public class Rectangle extends GeometricObject {
     private double side1, side2;
 
     public Rectangle() {
@@ -26,10 +24,24 @@ public class Rectangle extends GeometricObject{
     }
 
     @Override
+    public GeometricObject compareTo(GeometricObject ob) {
+        return max(this, ob);
+    };
+
+    @Override
     public String toString() {
         return String.format("Прямоугольник: сторона1 = %.2f; сторона2 = %.2f; " +
                         "цвет = %s; закрашен = %b; площадь = %.2f; периметр = %.2f", side1, side2, color, filled,
                 getArea(), getPerimeter());
+    }
+
+    @Override
+    public void howToColor() {
+        if (filled) {
+            System.out.println("Раскрасьте все четыре стороны");
+        } else {
+            System.out.println("Нельзя раскрасить(");
+        }
     }
 
     public void setSide1(double s1) { this.side1 = s1; }
